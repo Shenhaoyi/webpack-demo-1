@@ -4,7 +4,7 @@ import "./x.scss";
 import "./y.less";
 import "./z.styl";
 import png from "./assets/1.png";
-console.log(png);
+// console.log(png);
 const div = document.getElementById("app");
 
 // div.innerHTML = `
