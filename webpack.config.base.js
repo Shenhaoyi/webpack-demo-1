@@ -17,4 +17,45 @@ module.exports = {
       template: "src/assets/index.html", //用我给你的html来生成模板
     }),
   ],
+  //scss
+  module: {
+    rules: [
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"], //把文件变成文件路径
+      },
+      {
+        test: /\.styl$/,
+        loader: ["style-loader", "css-loader", "stylus-loader"],
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader", // creates style nodes from JS strings
+          },
+          {
+            loader: "css-loader", // translates CSS into CommonJS
+          },
+          {
+            loader: "less-loader", // compiles Less to CSS
+          },
+        ],
+      },
+      {
+        test: /\.scss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          {
+            loader: "sass-loader",
+            options: { implementation: require("dart-sass") },
+          },
+        ],
+      },
+    ],
+  },
 };
