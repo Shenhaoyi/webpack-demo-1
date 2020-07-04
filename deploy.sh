@@ -1,5 +1,5 @@
 npm run build &&
-git checkout gh pages &&
+git checkout gh-pages &&
 rm -rf src *.html *.css *.js *.png &&
 mv dist/* ./ &&
  rm -rf dist;
